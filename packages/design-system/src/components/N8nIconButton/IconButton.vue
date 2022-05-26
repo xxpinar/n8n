@@ -1,15 +1,5 @@
 <template functional>
-	<component :is="$options.components.N8nButton"
-		:type="props.type"
-		:disabled="props.disabled"
-		:size="props.size"
-		:loading="props.loading"
-		:title="props.title"
-		:icon="props.icon"
-		:theme="props.theme"
-		@click="(e) => listeners.click && listeners.click(e)"
-		circle
-	/>
+	<n8n-button v-bind="props" v-on="listeners" />
 </template>
 
 <script lang="ts">
@@ -44,6 +34,10 @@ export default {
 		},
 		theme: {
 			type: String,
+		},
+		circle: {
+			type: Boolean,
+			default: true,
 		},
 	},
 };
